@@ -136,5 +136,17 @@ func buildBody(m discord.Message) string {
 		b.WriteString("\n")
 		b.WriteString(url)
 	}
+	b.WriteString("\n")
+	b.WriteString(messageLink(m))
 	return b.String()
+}
+
+// messageLink builds a Discord jump link to the original message. For direct
+// messages GuildID is empty, in which case Discord uses the "@me" segment.
+func messageLink(m discord.Message) string {
+	guild := m.GuildID
+	if guild == "" {
+		guild = "@me"
+	}
+	return "https://discord.com/channels/" + guild + "/" + m.ChannelID + "/" + m.ID
 }
