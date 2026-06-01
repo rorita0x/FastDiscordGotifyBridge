@@ -1,0 +1,9 @@
+# Secrets / local config
+config.toml
+.env
+
+# Build artifacts
+/bridge
+
+# Fetched at build time, never committed
+internal/certs/cacert.pem

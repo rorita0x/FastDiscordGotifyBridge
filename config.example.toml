@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------------------
+# FastDiscordGotifyBridge configuration
+# Copy this file to config.toml and fill in your values.
+# ---------------------------------------------------------------------------
+
+[discord]
+# Your personal Discord account token. See the README for how to obtain it.
+# Treat this like a password — it grants full access to your account.
+user_token = "YOUR_DISCORD_USER_TOKEN"
+
+# Forward messages you send yourself too (default: false).
+notify_own = false
+
+# Drop messages authored by bots/webhooks (default: false).
+ignore_bots = false
+
+
+[gotify]
+# Base URL of your Gotify server (no trailing /message).
+url = "https://gotify.example.com"
+
+# A Gotify *application* token (created under "Apps" in the Gotify UI).
+token = "YOUR_GOTIFY_APP_TOKEN"
+
+# Default notification priority when a [[watch]] block doesn't override it.
+default_priority = 5
+
+
+# One [[watch]] block per server (or grouping) you care about.
+# Add as many as you like. Channel IDs are globally unique, so guild_id is
+# only used as a human-readable hint — matching is by channel_id.
+
+[[watch]]
+label = "My Server / #alerts"     # used as the Gotify notification title
+guild_id = "111111111111111111"   # optional, informational
+channel_ids = ["222222222222222222", "333333333333333333"]
+priority = 8                      # optional, overrides default_priority
+
+[[watch]]
+label = "Another Server / #general"
+channel_ids = ["444444444444444444"]

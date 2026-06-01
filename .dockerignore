@@ -1,0 +1,8 @@
+# Never bake secrets or local artifacts into the build context.
+config.toml
+.env
+*.md
+.git
+.gitignore
+bridge
+internal/certs/cacert.pem
