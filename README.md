@@ -1,5 +1,7 @@
 # FastDiscordGotifyBridge
 
+> ⚠️ This is 100% vibe-coded, not a single line was written by me (except this one)
+
 Forward messages from **specific Discord channels** to **Gotify** push
 notifications, in real time — often faster than Discord's own mobile push.
 
